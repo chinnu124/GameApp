@@ -14,7 +14,7 @@ public class DataHolder {
 
     private int capacity;
     private List<Characters> queue = new LinkedList<Characters>();
-    private static DataHolder instance = new DataHolder(5);
+    private static DataHolder instance = new DataHolder(15);
     private boolean isDataAccess = false;
 
     Logger logger = LoggerFactory.getLogger(DataHolder.class);
