@@ -20,7 +20,7 @@ public class ScheduleTask {
     public void pullData() throws Exception {
         logger.info("Get Data ");
         MockyClient mockyClient = new MockyClient();
-        List<Characters> characters = mockyClient.getCharMap();
+        List<Characters> characters = mockyClient.getCharList();
         DataHolder dataStore = DataHolder.getInstance();
         // Once the data access is done then use this to refresh the data
         if (dataStore.isDataAccess()) {
@@ -31,9 +31,9 @@ public class ScheduleTask {
         //This will get execute until there is no request made by client based on sorted max power
         else {
             Collections.sort(characters);
-            for (Characters actor : characters) {
+            /*for (Characters actor : characters) {
                 dataStore.putAll(actor);
-            }
+            }*/
         }
 
     }

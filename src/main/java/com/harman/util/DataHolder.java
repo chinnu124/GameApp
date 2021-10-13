@@ -23,10 +23,12 @@ public class DataHolder {
         this.capacity = capacity;
     }
 
+    //Creating an object of datastore class
     public static DataHolder getInstance(){
         return instance;
     }
 
+    //method to add each character into the list
     public  void put(Characters character){
 
         if(queue.contains(character)){
@@ -47,6 +49,7 @@ public class DataHolder {
         }
     }
 
+    //To sort the characters based on power and access count
     public void sortBasedOnAccesCountAndMaxPower(){
         Collections.sort(queue, new Comparator<Characters>() {
             @Override
@@ -61,6 +64,7 @@ public class DataHolder {
 
     }
 
+    //To refresh data after every few seconds
     public void refreshData(Characters newCharacter){
         for(Characters character : queue){
             if(character.getName().equalsIgnoreCase(newCharacter.getName())){
@@ -70,6 +74,7 @@ public class DataHolder {
         }
     }
 
+    //Optional method which can be implemented in the schedules task to make the list pre filled
     public  void putAll(Characters characters){
         if(capacity != queue.size()){
             queue.add(characters);
@@ -77,7 +82,7 @@ public class DataHolder {
     }
 
 
-
+    //To obtain the entered character name
     public  Characters get(String characterName){
         isDataAccess = true;
         Characters foundCharacter = null;
@@ -97,7 +102,8 @@ public class DataHolder {
             logger.info(character.toString());
         }
     }
-
+    
+    //To check if the character name is received
     public boolean isDataAccess() {
         return isDataAccess;
     }

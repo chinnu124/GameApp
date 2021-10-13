@@ -106,7 +106,7 @@ public class MockyClient {
 		
 	}
 	
-	public List<Characters> getCharMap() throws Exception
+	public List<Characters> getCharList() throws Exception
 	{
 		getCharacters(getAvengersArray());
 		getCharacters(getAntiHeroesArray());

@@ -40,7 +40,7 @@ public class CharacterService {
     private Characters getFromService(String actorName) {
         try {
             MockyClient mockyClient = new MockyClient();
-            List<Characters> characters = mockyClient.getCharMap();
+            List<Characters> characters = mockyClient.getCharList();
             for(Characters character : characters){
                 if(character.getName().equals(actorName)){
                     return character;

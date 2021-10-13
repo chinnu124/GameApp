@@ -18,9 +18,11 @@ public class HomeController{
 
 
 	@GetMapping("/character/{characterName}")
-	public ResponseEntity getMaxPower(@PathVariable String characterName){
+	public ResponseEntity getMaxPower(@PathVariable String characterName)
+	{
 		Integer maxPower =  characterService.getMAxPower(characterName);
-		if(maxPower == null) return  ResponseEntity.ok("No data found");
+		if(maxPower == null) 
+			return  ResponseEntity.ok("No data found");
 		return ResponseEntity.ok(maxPower);
 	}
 	
